@@ -1,3 +1,27 @@
+user will be given a menu
+greetings "Welcome to the sjb_cougars varisty team"
+a choice of 10 sjb_players 
+proceed to Playersinfo
+
+
+
+
+
+
+Classes-
+CLI
+Playersinfo
+environment
+Scraper
+sjb_players
+
+
+
+
+
+
+
+
 Building Chow Now Gem
 Imagine interface
 Start with project structure - Google
