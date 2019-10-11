@@ -2,9 +2,26 @@ user will be given a menu
 greetings "Welcome to the sjb_cougars varisty team"
 a choice of 10 sjb_players 
 proceed to Playersinfo
+list of positions have user input then sjb_players info will open
+
+"Welcome to the SJB Cougars HS football team"
 
 
+1.Quarter back
+2.Running back
+3.Wide Receiver 
+4.Center
+5.Offensive line
+6.Defensive line
+7.Line backer
+8.Corner back
+9.Strong safety
 
+
+Enter number to see Playersinfo
+
+
+(name, town, gradutating year)
 
 
 
