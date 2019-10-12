@@ -1,6 +1,6 @@
 class Sjb::Positions
   
-  attr_accessor :quarterback, :runningback, :widereciever, :center, :offensiveline, :defensiveline, :linebacker, :cornerback, :safety
+  attr_accessor :quarterback, :runningback, :widereceiver, :center, :offensiveline, :defensiveline, :linebacker, :cornerback, :safety
   
   def initialize(name, town, graduation_year)
     @name = name
