@@ -15,10 +15,18 @@ positions.each_with_index do |pos, index|
   puts "#{index + 1}" "."  "#{pos}" 
   end
   
-  puts
-  puts "Enter number to see Playersinfo"
   
-  input = gets.chomp 
+  puts
+  puts "Enter number to see Playersinfo:"
+  
+  
+  
+  
+  name = gets.chomp
+    puts "You entered player \"#{name}\""
+    scraper = SJB_Players::Scraper.new(name)
+    puts "here is the player's stats:"
+    puts scraper.players
   binding.pry
   
 end
