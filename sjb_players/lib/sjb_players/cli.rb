@@ -1,5 +1,6 @@
 require 'pry'
 
+# require_relative '../scraper'
 
 # class SJB_Players::CLI 
 
@@ -25,9 +26,9 @@ positions.each_with_index do |pos, index|
   name = gets.chomp
     puts "You entered player \"#{name}\""
     scraper = SJB_Players::Scraper.new(name)
-    puts "here is the player's stats:"
+    puts "here is the player's bio:"
     puts scraper.players
-  binding.pry
+  # binding.pry
   
 end
 
@@ -39,4 +40,8 @@ greeting
 
 
 # end 
+
+
+
+
 

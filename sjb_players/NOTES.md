@@ -7,7 +7,7 @@ list of positions have user input then sjb_players info will open
 "Welcome to the SJB Cougars HS football team"
 
 
-1.Quarter back
+1.Quarter back 
 2.Running back
 3.Wide Receiver 
 4.Center
@@ -33,7 +33,20 @@ Scraper
 sjb_players
 
 
+require_relative “./sjb_players/_______”
+require "bundler/setup"
+spec.add_dependency "nokogiri"
+require 'open-uri'
+require 'nokogiri'
+top of lib>sjb.rb
 
+
+1. Next Step is to get user input
+2. Equate Position on the user side to the pos in the object Quarterback == QB
+3. Use method like find or detect to find QB
+4. If statements and assign value
+5. or case statements and assign value
+6. Return the player(s) based on position from the object not from the menu description
 
 
 

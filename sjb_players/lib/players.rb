@@ -1,10 +1,11 @@
-class Positions
+class Sjb::Players
   
-  attr_accessor :number, :lname, :fname, :grad, :pos, :height, :weight, :town 
+  attr_accessor :first_name, :last_name, :position, :graduation_year, :town
   
   @@all = []
   
   def initialize
+    
     @@all << self
   end
   
