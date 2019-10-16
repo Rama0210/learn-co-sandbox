@@ -1,7 +1,9 @@
 require 'pry-nav'
 require 'nokogiri'
 require 'open-uri'
+
 require_relative './sjb_players/playersinfo'
+
 i = 2
 
 @doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
@@ -11,27 +13,45 @@ i = 2
  
    data2_length = 40
    while data2_length > 2
-    positions = Positions.new
-    positions.number = data2[i].children[1].text
-    positions.lname  = data2[i].children[3].text
-    positions.fname  = data2[i].children[5].text
-    positions.grad   = data2[i].children[7].text
-    positions.pos    = data2[i].children[9].text
-    positions.height = data2[i].children[11].text
-    positions.weight = data2[i].children[13].text
-    positions.town   = data2[i].children[15].text
+    
+    number = data2[i].children[1].text
+    lname  = data2[i].children[3].text
+    fname  = data2[i].children[5].text
+    grad   = data2[i].children[7].text
+    pos    = data2[i].children[9].text
+    height = data2[i].children[11].text
+    weight = data2[i].children[13].text
+    town   = data2[i].children[15].text
+    positions = Positions.new(number, lname, fname, grad, pos, height, weight, town)
+    # binding.pry
   i+=1
    data2_length -=1
  end
  
 Positions.all.each do |a|
    puts a.number 
+   puts
+   
    puts a.lname 
+   puts
+   
    puts a.fname
+   puts
    puts a.grad
+   puts
+   
    puts a.pos
    puts a.height
    puts a.weight
    puts a.town
    
  end
+
+ 
+ 
+ 
+
+
+
+ 
+

@@ -39,11 +39,15 @@ spec.add_dependency "nokogiri"
 require 'open-uri'
 require 'nokogiri'
 top of lib>sjb.rb
+<<<<<<< HEAD
+=======
+
+>>>>>>> e7ce8f46c7c461dce274e7ead831fee9eede26a5
 
 
 1. Next Step is to get user input
 2. Equate Position on the user side to the pos in the object Quarterback == QB
-3. Use method like find or detect to find QB
+3. Use method like select to find QB
 4. If statements and assign value
 5. or case statements and assign value
 6. Return the player(s) based on position from the object not from the menu description

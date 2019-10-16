@@ -2,91 +2,46 @@ require 'pry-nav'
 require 'nokogiri'
 require 'open-uri'
 
-# class SJB_Players::Scraper
-  
-# SJB roster- list of players and where they are from and what year they graduate? Get a number of players graduating each year???
+# require_relative './sjb_players/playersinfo'
+i = 2
 
+@doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
 
-class Player
-attr_accessor :name, :town, :graduation_year 
-end
+#a = @doc.css(".entry-container.fix").each do |a|
+ data2 = @doc.css(".entry > table:nth-child(1) > tbody:nth-child(2) > tr")
+ 
+   data2_length = 40
+   while data2_length > 2
+    positions = Positions.new
+    number = data2[i].children[1].text
+    lname  = data2[i].children[3].text
+    fname  = data2[i].children[5].text
+    grad   = data2[i].children[7].text
+    pos    = data2[i].children[9].text
+    height = data2[i].children[11].text
+    weight = data2[i].children[13].text
+    town   = data2[i].children[15].text
+  i+=1
+   data2_length -=1
+ end
+ 
+Positions.all.each do |a|
+   puts a.number 
+   puts a.lname 
+   puts a.fname
+   puts a.grad
+   puts a.pos
+   puts a.height
+   puts a.weight
+   puts a.town
+   
+ end
+
  
  
  
-# @doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
- @doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
-# List of Player names
-
-fb = @doc.css("div.entry-container.fix").each do  |a|
-# binding.pry
-
-
-data = @doc.css(".entry > table:nth-child(1) > tbody:nth-child(2) > tr")[2,10]
 
 
 
-
-end
-
-player = Player.new
-player.name = "#{data[2].text} #{data[1].text}"
-player.position = data[4].text
-player.town = data[7].text
  
-# binding.pry
-puts player.name
-puts player.position
-puts player.town
- 
-# List of Player info:
-#   Position
-#   Number
-#   Town
 
-
-
-# class Cougars::Scraper
-
-# BASE_URL = http://nychsfl.org/rosters/st-john-the-baptist/
-
-# def self.player_info
-# SJB roster- list of players and where they are from and what year they graduate? Get a number of players graduating each year???
-# require 'pry'
-
-# require 'nokogiri'
-# require 'open-uri'
-
-
-# class Player
-# attr_accessor :name, :position, :town
-# end
- 
-# @doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
- 
-# # List of Player names
-# data = doc.css(".entry > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(3) > td")
-# #post-193 > div.entry-container.fix > div > table:nth-child(1) > tbody > tr:nth-child(4)
-# #  ".entry > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(3) > td"
-# binding.pry 
-
-# player = Player.new
-# player.name = "#{data[2].text} #{data[1].text}"
-# player.position = data[4].text
-# player.town = data[7].text
- 
-# puts player.name
-# puts player.position
-# puts player.town
- 
-# List of Player info:
-#   Position
-#   Number
-#   Town
-
-
-
-# class Cougars::Scraper
-
-# BASE_URL = http://nychsfl.org/rosters/st-john-the-baptist/
-
-# def self.player_info
