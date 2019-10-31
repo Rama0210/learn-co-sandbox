@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative './lib'
-require_relative “./sjb_players/_______”
+require_relative '../lib/sjb_players/cli'
+
 require "bundler/setup"
 
 
-SJB_Players::CLI.new.call
+SJB_Players::CLI.new.greeting

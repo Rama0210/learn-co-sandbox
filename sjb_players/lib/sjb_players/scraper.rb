@@ -2,9 +2,12 @@ require 'pry-nav'
 require 'nokogiri'
 require 'open-uri'
 
-# require_relative './sjb_players/playersinfo'
-i = 2
+require_relative './playersinfo'
+module SJB_Players
+class Scraper
+  def scrape 
 
+i = 2 
 @doc = Nokogiri::HTML(open('http://nychsfl.org/rosters/st-john-the-baptist/'))
 
 #a = @doc.css(".entry-container.fix").each do |a|
@@ -12,7 +15,7 @@ i = 2
  
    data2_length = 40
    while data2_length > 2
-    positions = Positions.new
+    
     number = data2[i].children[1].text
     lname  = data2[i].children[3].text
     fname  = data2[i].children[5].text
@@ -21,25 +24,27 @@ i = 2
     height = data2[i].children[11].text
     weight = data2[i].children[13].text
     town   = data2[i].children[15].text
+    positions = Positions.new(number, lname, fname, grad, pos, height, weight, town )
   i+=1
    data2_length -=1
  end
  
-Positions.all.each do |a|
-   puts a.number 
-   puts a.lname 
-   puts a.fname
-   puts a.grad
-   puts a.pos
-   puts a.height
-   puts a.weight
-   puts a.town
+# Positions.all.each do |a|
+#   puts a.number 
+#   puts a.lname 
+#   puts a.fname
+#   puts a.grad
+#   puts a.pos
+#   puts a.height
+#   puts a.weight
+#   puts a.town
    
- end
+
 
  
- 
- 
+ end
+ end
+ end
 
 
 

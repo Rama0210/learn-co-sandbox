@@ -1,8 +1,9 @@
 require 'pry'
 
-# require_relative '../scraper'
-
-# class SJB_Players::CLI 
+ require_relative './scraper'
+ require_relative './playersinfo'
+module SJB_Players
+class CLI 
 
   def greeting
   puts  "Welcome to the SJB Cougars HS football team"
@@ -24,80 +25,91 @@ positions.each_with_index do |pos, index|
  
    puts "You entered player \"#{positions}\""
    
-   scraper = SJB_Players::Scraper.new(name)
+   scraper = SJB_Players::Scraper.new
   
     
-    puts "here is the player's bio:"
-    puts scraper.players
-  # binding.pry
+ 
+   
+    
+    scraper.scrape
+    def self
+    self.get_players
+    self.list_players
+    self.choose_player
+    loop do
+      puts "\nWould you like to read about a player?"
+      input = gets.strip.downcase
+      if input == "y" || input == "yes"
+        puts "To select a player please enter a number:"
+        self.list_players
+        self.choose_player
+      elsif input == "n" || input == "no"
+        puts "Thank you, see you later!"
+        break
+      else
+        puts "That is not a valid response."
+    end
+  end
+end
+    
+  end
   
+  def get_players
+    @players = Positions.all(2,40)
+  end
+ 
+  def list_players
+    @players.each_with_index{|p,i| puts "#{i + 1}. #{p.name}\n"}
+  end
+
+  def choose_player
+    input = gets.strip.to_i
+    while input < 1 || input > @players.length
+      puts "Please enter a valid input, select a number 1-9"
+    input = gets.strip.to_i 
+  end
+  #   info = SJB_Players::Players.all[input - 1]
+  #   SJB_Players::Scraper.player_bio(info)
+  #   self.display_player_info(info)
   
-  if scraper.positions.length > 0
-          puts "- - - Here are the positions - - -"
-          puts scraper.positions 
-        elsif scraper.positions.length < 1
-          puts "That is not a valid option"
-          SJB_Players::CLI.new.run
-        end
-  puts ""
-        puts "What positions would you like more information on?"
-        input = gets.strip
-        puts ""
-        puts "- - - Here are the players - - -"
-        begin
-        data2 = scraper.data2(input)
-        rescue 
-          puts "That is not a valid option, please choose from the list"
-          puts "What positions would you like more information on?"
-        input = gets.strip
-        data2 = scraper.data2(input)
-        end
-        puts ''
-        puts "Would you like a description of this positions? Enter Y or N"
-        answer = gets.strip.downcase
-        if answer == "y"
-          puts data2.description
-          puts "Would you like to choose another positions? Enter Y or N"
-          input_two = gets.strip.downcase
-        if input_two == "y"
-          run
-        elsif input_two == "n"
-          puts ""
-          puts "Thank you for using SJB_Players! Have a great day!"
-          exit
-        else
-          puts ""
-          puts "I don't understand that answer."
-          run
-        end
-        elsif answer == 'n'
-          puts "Would you like to choose another positions? Enter Y or N"
-          input_three = gets.strip.downcase
-        if input_three == "y"
-          run
-        elsif input_three == "n"
-          puts ""
-          puts "Thank you for using SJB_Players! Have a great day!"
-          exit
-        else
-          puts ""
-          puts "I don't understand that answer."
-          run
-        end
-      end
-   end 
+  # end
+
+  def display_player_info(info)
+    puts "-------------------------------------------------------Player Info-------------------------------------------------------------"
+    puts "\nnumber: #{info.number}"
+    puts "\nfname: #{info.fname}" 
+    puts "\nlname: #{info.lname}"
+    puts "\ngrad:  #{info.grad}"
+    puts "\nPos: #{info.pos}"
+    puts "\nheight:#{info.height}"
+    puts "\nweight #{info.weight}"
+    puts "\ntown: #{info.town}"
+    
+    puts "-------------------------------------------------------Player Bio------------------------------------------------------------\n"
+    puts ""
+    puts info.stat
+  end
+
+
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0
+  end 
+
+
+
+
+end
 
 
 
 
   
-  puts greeting
 
 
 
-# end 
+end
 
-
+end
 
 
 
