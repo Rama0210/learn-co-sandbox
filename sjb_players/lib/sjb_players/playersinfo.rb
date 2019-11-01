@@ -8,15 +8,7 @@ class Positions
 
 
   def initialize  
-    # (number, lname, fname, grad, pos, height, weight, town )
-  #   @number = number
-  #   @fname = fname
-  #   @lname = lname
-  #   @grad = grad
-  #   @pos = pos
-  #   @height = height
-  #   @weight = weight
-  #   @town = town
+   
 
     @@all << self
   end
