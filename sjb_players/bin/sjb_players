@@ -5,4 +5,4 @@ require_relative '../lib/sjb_players/cli'
 require "bundler/setup"
 
 
-SJB_Players::CLI.new.greeting
+SJB_Players::CLI.new.main
