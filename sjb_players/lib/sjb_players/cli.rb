@@ -74,13 +74,19 @@ class CLI
       
     
   def command
-    puts
+    puts "Would you like to go back to main_menu? enter Y or N"
+    input = gets.strip.downcase
+        if input == "y"
+          main_menu
+        elsif input == "n"
+          puts ""
     puts "You can type exit at anytime to leave the program"
     input = ""
     while input != "exit"
       input = gets.chomp
                end
              end
+           end
              
 def end_program
       puts "Thank you for using SJB_Players CLI!"
@@ -97,6 +103,7 @@ def end_program
     def clear_screen
       system('clear')
     end
+
   
   def get_players
     
@@ -117,9 +124,3 @@ def end_program
   end
 end
 end
-
-     def end_program
-      
-       puts "Thank you for using the Chow Now CLI!"
-       !exit
-    end
