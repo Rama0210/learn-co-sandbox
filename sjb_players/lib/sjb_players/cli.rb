@@ -103,7 +103,35 @@ def end_program
     def clear_screen
       system('clear')
     end
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+    
+#     def get_players
+#     self.list_players
+#     self.choose_player
+#     loop do
+#       puts "\nWould you like to read about a player?"
+#       input = gets.strip.downcase
+#       if input == "y" || input == "yes"
+#         puts "To select a player please enter a number:"
+#         self.list_players
+#         self.choose_player
+#       elsif input == "n" || input == "no"
+#         puts "Thank you, see you later!"
+#         break
+#       else
+#         puts "That is not a valid response."
+#     end
+#   end
+# end
+    
+ # end
+>>>>>>> 7dba783927f3471ac3de26ae15d3aaf1497b2098
+>>>>>>> 9c19c6771270ebdba2b449b5cc7e91112b92578e
   
   def get_players
     
@@ -124,3 +152,71 @@ def end_program
   end
 end
 end
+<<<<<<< HEAD
+=======
+
+     def end_program
+      
+       puts "Thank you for using the Chow Now CLI!"
+       !exit
+<<<<<<< HEAD
+    end
+=======
+    end
+
+    
+    
+    
+    
+#   # end
+ 
+#   # def list_players
+#   #   @players.each_with_index{|p,i| puts "#{i + 1}. #{p.name}\n"}
+#   # end
+
+#   # def choose_player
+#   #   input = gets.strip.to_i
+#   #   while input < 1 || input > @players.length
+#   #     puts "Please enter a valid input, select a number 1-9"
+#   #   input = gets.strip.to_i 
+#   # end
+   
+
+#   def display_player_info(info)
+#     puts "-------------------------------------------------------Player Info-------------------------------------------------------------"
+#     puts "\nnumber: #{info.number}"
+#     puts "\nfname: #{info.fname}" 
+#     puts "\nlname: #{info.lname}"
+#     puts "\ngrad:  #{info.grad}"
+#     puts "\nPos: #{info.pos}"
+#     puts "\nheight:#{info.height}"
+#     puts "\nweight #{info.weight}"
+#     puts "\ntown: #{info.town}"
+    
+#     puts "-------------------------------------------------------Player Bio------------------------------------------------------------\n"
+#     puts ""
+#     puts info.stat
+#   end
+
+
+
+
+
+
+# end
+
+
+
+
+  
+
+
+
+# end
+
+
+
+
+
+>>>>>>> 7dba783927f3471ac3de26ae15d3aaf1497b2098
+>>>>>>> 9c19c6771270ebdba2b449b5cc7e91112b92578e
